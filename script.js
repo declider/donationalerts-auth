@@ -1,8 +1,10 @@
+const copyButton = document.getElementById("copy")
+
 function copy() {
     let el = document.getElementById("access-token")
     navigator.clipboard.writeText(el.value)
-    el.innerText = "Скопировано"
-    setTimeout(() => el.innerText = "Скопировать", 3000)
+    copyButton.innerText = "Скопировано"
+    setTimeout(() => copyButton.innerText = "Скопировать", 3000)
 }
 
 
@@ -29,5 +31,5 @@ window.onload = () => {
     if (!hash) { return }
     let token = hash.split("access_token=")[1].split("&",1)[0]
     document.getElementById("access-token").value = token
-    document.getElementById("copy").disabled = false
+    copyButton.disabled = false
 }
