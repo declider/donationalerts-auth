@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pico.orange.min.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Быстрая авторизация DonationAlerts</h1>
+        <hr>
+        <p>Если авторизация происходит на стриме - экран лучше скрыть.</p>
+        <article>
+            <header>Scopes</header>
+            <fieldset>
+                <label>
+                    <input type="checkbox" id="oauth-user-show" class="scope" checked>
+                    oauth-user-show
+                </label>
+                <label>
+                    <input type="checkbox" id="oauth-donation-subscribe" class="scope" checked>
+                    oauth-donation-subscribe
+                </label>
+                <label>
+                    <input type="checkbox" id="oauth-donation-index" class="scope">
+                    oauth-donation-index
+                </label>
+                <label>
+                    <input type="checkbox" id="oauth-custom_alert-store" class="scope">
+                    oauth-custom_alert-store
+                </label>
+                <label>
+                    <input type="checkbox" id="oauth-goal-subscribe" class="scope">
+                    oauth-goal-subscribe
+                </label>
+                <label>
+                    <input type="checkbox" id="oauth-poll-subscribe" class="scope">
+                    oauth-poll-subscribe
+                </label>
+                <hr>
+                <small><i>Если нужны только оповещения о донатах - оставьте две первые галочки.</i></small>
+            </fieldset>
+            <footer><button onclick="auth()">Авторизация</button></footer>
+        </article>
+            
+        <article>
+            <header>access_token</header>
+            <input id="access-token" type="password" readonly>
+            <footer><button onclick="copy()" id="copy" disabled>Скопировать</button></footer>
+        </article>
+        
+        <hr>
+        <small>
+            <a href="https://www.donationalerts.com/apidoc" target="_blank">Документация Donationalerts API</a>,
+            <a href="https://github.com/declider/donationalerts" target="_blank">GitHub</a>, автор: declider
+        </small>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
